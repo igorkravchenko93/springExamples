@@ -2,5 +2,7 @@ package com.kravchenko.service;
 
 public interface BlogService {
 
-    String getUserName();
+    String createBlogs();
+
+    void printAllBlogs();
 }

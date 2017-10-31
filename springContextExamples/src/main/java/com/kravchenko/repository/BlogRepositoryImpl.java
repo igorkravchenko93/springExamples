@@ -14,14 +14,13 @@ public class BlogRepositoryImpl implements BlogRepository {
     private EntityManager em;
 
     @Override
-    @Transactional
     public void save(Blog blog) {
         em.persist(blog);
     }
 
     @Override
     public List<Blog> getAll() {
-        return em.createQuery("from Blog", Blog.class).getResultList();
+        return em.createQuery("select b from Blog b", Blog.class).getResultList();
     }
 
 

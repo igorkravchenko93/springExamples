@@ -9,10 +9,12 @@ import javax.persistence.*;
  */
 @AllArgsConstructor
 @NoArgsConstructor
-@EqualsAndHashCode
-@Entity
+@RequiredArgsConstructor(staticName = "of")
+@EqualsAndHashCode(exclude = "blog")
 @Getter
 @Setter
+@ToString(exclude = {"blog", "id"})
+@Entity
 public class BlogPost {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -21,11 +23,15 @@ public class BlogPost {
 
     @ManyToOne
     @JoinColumn(name = "id")
+    @NonNull
     private Blog blog;
 
     @Column(name = "author")
+    @NonNull
     private String author;
+
     @Column(name = "post_text")
+    @NonNull
     private String postText;
 
 }

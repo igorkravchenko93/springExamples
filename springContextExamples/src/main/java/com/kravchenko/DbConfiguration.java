@@ -24,7 +24,6 @@ public class DbConfiguration {
     @Autowired
     private Environment environment;
 
-
     @Bean
     public DataSource dataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
@@ -68,8 +67,8 @@ public class DbConfiguration {
 
     private Properties additionalProperties() {
         Properties properties = new Properties();
-        properties.setProperty("hibernate.hbm2ddl.auto", "create-drop");
-        properties.setProperty("hibernate.dialect", "org.hibernate.dialect.PostgreSQL9Dialect");
+        properties.setProperty("hibernate.hbm2ddl.auto", environment.getProperty("hibernate.hbm2ddl.auto"));
+        properties.setProperty("hibernate.dialect", environment.getProperty("hibernate.dialect"));
         return properties;
     }
 

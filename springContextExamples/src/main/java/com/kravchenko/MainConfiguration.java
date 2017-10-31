@@ -20,11 +20,11 @@ public class MainConfiguration {
 
     @Bean
     public BlogService userService() {
-        return new BlogServiceImpl();
+        return new BlogServiceImpl(blogRepository());
     }
 
     @Bean
-    public BlogRepository blogRepository(){
+    public BlogRepository blogRepository() {
         return new BlogRepositoryImpl();
     }
 }
