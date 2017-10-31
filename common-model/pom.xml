@@ -12,7 +12,7 @@
     <properties>
         <org.hibernate.version>5.2.11.Final</org.hibernate.version>
     </properties>
-    <artifactId>commonModel</artifactId>
+    <artifactId>common-model</artifactId>
     <dependencies>
         <dependency>
             <groupId>org.projectlombok</groupId>
