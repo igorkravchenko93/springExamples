@@ -4,8 +4,9 @@ Modules:
 \
     **common-model**
 
-    Contains POJO with One-to-many JPA configuration
-    used for other modules for DB storage
+    Example of common module for a few applications
+    Example of POJO with One-to-many JPA configuration
+    Used by other modules for DB storage
     
 **rest-template-example**    
 
@@ -13,7 +14,12 @@ Modules:
     
 **spring-boot-full-app**
 
-    Example of end-to-end application
+    Example of sping-boot microservice
+    Example of end-to-end application 
+    //todo another one microservice. MultiModule one more time?
+    //todo connect them with Netflix Eureka
+    //todo connect them with Netflix Feign
+    //todo integration tests
     
 **spring-context-example**
     
