@@ -12,6 +12,7 @@
         <module>spring-boot-full-app</module>
         <module>spring-context-examples</module>
         <module>common-model</module>
+        <module>rest-template-example</module>
     </modules>
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>

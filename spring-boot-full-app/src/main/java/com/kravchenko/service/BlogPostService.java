@@ -1,6 +1,9 @@
 package com.kravchenko.service;
 
+import com.kravchenko.model.Blog;
 import com.kravchenko.model.BlogPost;
+
+import javax.transaction.Transactional;
 
 public interface BlogPostService {
 
@@ -8,5 +11,7 @@ public interface BlogPostService {
 
     Iterable<BlogPost> getAllPosts();
 
-    void createBlog();
+    Iterable<Blog> getAllBlogs();
+
+    void createBlog(String blogName);
 }

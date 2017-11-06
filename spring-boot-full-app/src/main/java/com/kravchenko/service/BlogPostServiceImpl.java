@@ -3,7 +3,7 @@ package com.kravchenko.service;
 import com.kravchenko.model.Blog;
 import com.kravchenko.model.BlogPost;
 import com.kravchenko.repository.BlogPostRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.kravchenko.repository.BlogRepository;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -12,10 +12,11 @@ import javax.transaction.Transactional;
 public class BlogPostServiceImpl implements BlogPostService {
 
     private BlogPostRepository blogPostRepository;
+    private BlogRepository blogRepository;
 
-    @Autowired
-    public BlogPostServiceImpl(BlogPostRepository blogPostRepository) {
+    public BlogPostServiceImpl(BlogPostRepository blogPostRepository, BlogRepository blogRepository) {
         this.blogPostRepository = blogPostRepository;
+        this.blogRepository = blogRepository;
     }
 
     @Override
@@ -34,10 +35,15 @@ public class BlogPostServiceImpl implements BlogPostService {
     }
 
     @Override
-    @Transactional
-    public void createBlog() {
-        Blog blog = new Blog();
-        blog.setBlogName("myBlog");
+    public Iterable<Blog> getAllBlogs() {
+        return blogRepository.findAll();
+    }
 
+    @Override
+    @Transactional
+    public void createBlog(String blogName) {
+        Blog blog = new Blog();
+        blog.setBlogName(blogName);
+        blogRepository.save(blog);
     }
 }

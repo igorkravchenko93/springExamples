@@ -40,21 +40,6 @@ public class DbConfiguration {
         return new HibernateJpaDialect();
     }
 
-//    @Bean
-//    public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
-//        LocalContainerEntityManagerFactoryBean entityManagerFactoryBean = new LocalContainerEntityManagerFactoryBean();
-//        entityManagerFactoryBean.setPersistenceXmlLocation("classpath:META-INF/persistence.xml");
-//        entityManagerFactoryBean.setPersistenceUnitName("developer.remarks.persistence.unit");
-//        entityManagerFactoryBean.setDataSource(dataSource());
-//        entityManagerFactoryBean.setJpaVendorAdapter(jpaVendorAdapter());
-//        entityManagerFactoryBean.setJpaDialect(jpaDialect());
-////        entityManagerFactoryBean.setPersistenceProviderClass(HibernatePersistence.class);
-//        entityManagerFactoryBean.setPackagesToScan("com.kravchenko.model");
-//
-//        return entityManagerFactoryBean;
-//    }
-//
-
     @Bean
     public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
         LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
