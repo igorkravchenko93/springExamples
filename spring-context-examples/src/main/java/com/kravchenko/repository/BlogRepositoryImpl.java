@@ -20,7 +20,7 @@ public class BlogRepositoryImpl implements BlogRepository {
 
     @Override
     public List<Blog> getAll() {
-        return em.createQuery("select b from Blog b", Blog.class).getResultList();
+        return em.createQuery("select b from blog b", Blog.class).getResultList();
     }
 
 

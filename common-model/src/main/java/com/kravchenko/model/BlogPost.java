@@ -14,7 +14,8 @@ import javax.persistence.*;
 @Getter
 @Setter
 @ToString(exclude = {"blog", "id"})
-@Entity
+@Entity(name = "blog_post")
+@Table(name = "blog_post")
 public class BlogPost {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

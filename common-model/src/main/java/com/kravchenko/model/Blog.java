@@ -6,13 +6,14 @@ import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
-@Entity
 @RequiredArgsConstructor(staticName = "of")
 @NoArgsConstructor
 @EqualsAndHashCode
 @Getter
 @Setter
 @ToString
+@Entity(name = "blog")
+@Table(name = "blog")
 public class Blog {
 
     @Id
