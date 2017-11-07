@@ -1,4 +1,4 @@
-package com.kravchenko.repository;
+package com.kravchenko.beans.java;
 
 import com.kravchenko.model.Blog;
 

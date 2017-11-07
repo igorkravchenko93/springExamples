@@ -1,4 +1,4 @@
-package com.kravchenko.service;
+package com.kravchenko.beans.java;
 
 public interface ValidationService {
 
