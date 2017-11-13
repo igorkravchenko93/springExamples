@@ -1,8 +1,7 @@
-package com.kravchenko.service;
+package com.kravchenko.beans.java;
 
 import com.kravchenko.model.Blog;
 import com.kravchenko.model.BlogPost;
-import com.kravchenko.repository.BlogRepository;
 
 import javax.transaction.Transactional;
 

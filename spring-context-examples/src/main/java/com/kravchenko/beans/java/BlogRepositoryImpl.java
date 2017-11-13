@@ -1,14 +1,12 @@
-package com.kravchenko.repository;
+package com.kravchenko.beans.java;
 
 import com.kravchenko.model.Blog;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.transaction.Transactional;
 import java.util.List;
 
 public class BlogRepositoryImpl implements BlogRepository {
-
 
     @PersistenceContext
     private EntityManager em;
