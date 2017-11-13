@@ -1,0 +1,8 @@
+server:
+  port: 3005
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:3003/eureka

@@ -1,0 +1,14 @@
+server:
+  port: 3003
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+#    serviceUrl:
+#      defaultZone: http://discovery:${server.port}/eureka/
+#  server:
+#    enable-self-preservation: true
+
