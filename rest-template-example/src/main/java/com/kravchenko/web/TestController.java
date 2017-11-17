@@ -13,7 +13,11 @@ import java.util.List;
 @RestController
 public class TestController {
 
-    private static final String BLOG_SERVICE_URL = "http://localhost:3001";
+    private static final ArrayList<Blog> BLOG_ARRAY_LIST = new ArrayList<Blog>() {{
+        add(Blog.of("one"));
+        add(Blog.of("two"));
+        add(Blog.of("three"));
+    }};
     private final RestTemplate restTemplate;
 
 
@@ -22,46 +26,34 @@ public class TestController {
         this.restTemplate = restTemplate;
     }
 
-    @GetMapping(path = "/request")
-    public int sendRequestForBlog() {
-        ResponseEntity<ArrayList> forEntity = restTemplate.getForEntity(BLOG_SERVICE_URL + "/blog/all", ArrayList.class, Collections.emptyMap());
-        return forEntity.getBody().size();
-    }
-
-    @GetMapping(path = "/war")
+    @GetMapping(path = "/health")
     public String healthCheck(@RequestParam(defaultValue = "Igor") String author,
                               @RequestParam(defaultValue = "SomeText") String message) {
         return author + " " + message;
     }
 
-    @GetMapping(path = "/blog/all")
+    @GetMapping(path = "/blogs")
     public List<Blog> getBlogs() {
-        return new ArrayList<Blog>() {{
-            add(Blog.of("one"));
-            add(Blog.of("two"));
-            add(Blog.of("three"));
-        }};
+        return BLOG_ARRAY_LIST;
     }
 
-    @PostMapping(path = "/bao", headers = "Content-Type=application/json")
-    public String incomingBao(@RequestBody String var) {
-        System.out.println(var);
-        return "ololo";
+    @GetMapping(path = "/request")
+    public int sendRequestForBlog() {
+        ResponseEntity<ArrayList> forEntity = restTemplate.getForEntity( "http://localhost:3001/blogs", ArrayList.class, Collections.emptyMap());
+        return forEntity.getBody().size();
     }
 
-    @GetMapping(path = "/bao")
+    @PostMapping(path = "/bodycheck", headers = "Content-Type=application/json")
+    public String readBody(@RequestBody String var) {
+        return "This is body=[" + var + "]";
+    }
+
+    @GetMapping(path = "/requestWithHeaders")
     public void customRequestWithHeaders() {
-        RestTemplate restTemplate = new RestTemplate();
-        HttpEntity<String> entity = buildHttpEntity();
-        String url = BLOG_SERVICE_URL + "/bao";
-        ResponseEntity<String> response = restTemplate.exchange(url, HttpMethod.POST, entity, String.class);
-    }
-
-    private HttpEntity<String> buildHttpEntity() {
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
-        return new HttpEntity<>("{ \"name\":\"this is my body\"}", headers);
+        HttpEntity<String> entity = new HttpEntity<>("{ \"name\":\"this is my body\"}", headers);
+        String url = "http://localhost:3001/bodycheck";
+        ResponseEntity<String> response = restTemplate.exchange(url, HttpMethod.POST, entity, String.class);
     }
-
-
 }

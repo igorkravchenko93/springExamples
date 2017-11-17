@@ -1,6 +1,6 @@
 package com.kravchenko.web;
 
-import com.kravchenko.App;
+import com.kravchenko.RestTemplateExample;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = App.class)
+@ContextConfiguration(classes = RestTemplateExample.class)
 public class TestControllerTest {
 
     public static final String REQUEST_BODY = "{ \"username\": \"aoadmin\", \"password\": \"bmcAdm1n\" }";
