@@ -7,12 +7,10 @@ import javax.persistence.*;
 /**
  * Created by Igor on 20.09.2017.
  */
-@AllArgsConstructor
+@Data
 @NoArgsConstructor
 @RequiredArgsConstructor(staticName = "of")
 @EqualsAndHashCode(exclude = "blog")
-@Getter
-@Setter
 @ToString(exclude = {"blog", "id"})
 @Entity(name = "blog_post")
 @Table(name = "blog_post")
@@ -23,7 +21,7 @@ public class BlogPost {
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "id")
+    @JoinColumn(name = "blog_id")
     @NonNull
     private Blog blog;
 

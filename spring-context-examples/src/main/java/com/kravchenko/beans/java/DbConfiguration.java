@@ -1,10 +1,9 @@
 package com.kravchenko.beans.java;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.ImportResource;
-import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.jpa.JpaDialect;
@@ -21,16 +20,30 @@ import java.util.Properties;
 @EnableTransactionManagement
 public class DbConfiguration {
 
+    /**
+     * From environment you can read application properties
+     */
     @Autowired
     private Environment environment;
+    /**
+     * You can read properties Manually
+     */
+    @Value("${db.url}")
+    private String url;
+    @Value("${db.driver}")
+    private String driver;
+    @Value("${db.username}")
+    private String username;
+    @Value("${db.password}")
+    private String password;
 
     @Bean
     public DataSource dataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
-        dataSource.setDriverClassName(environment.getProperty("db.driver"));
-        dataSource.setUrl(environment.getProperty("db.url"));
-        dataSource.setUsername(environment.getProperty("db.username"));
-        dataSource.setPassword(environment.getProperty("db.password"));
+        dataSource.setDriverClassName(driver);
+        dataSource.setUrl(url);
+        dataSource.setUsername(username);
+        dataSource.setPassword(password);
 
         return dataSource;
     }

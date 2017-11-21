@@ -8,10 +8,7 @@ import java.util.Set;
 
 @RequiredArgsConstructor(staticName = "of")
 @NoArgsConstructor
-@EqualsAndHashCode
-@Getter
-@Setter
-@ToString
+@Data
 @Entity(name = "blog")
 @Table(name = "blog")
 public class Blog {

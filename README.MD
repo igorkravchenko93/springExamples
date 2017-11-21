@@ -37,8 +37,13 @@ Modules:
     Example of ribbon loadBalancer
     Example of wrapped RestTemplate to not use http://localhost:3004 but http://ValidationService instead 
     Example of two microservices that chatting
+    Example of PathVariable
     //todo   Investigate discovery server with example https://github.com/kbastani/spring-cloud-microservice-example/blob/master/discovery-microservice/src/main/resources/application.yml
             #    serviceUrl:
             #      defaultZone: http://discovery:${server.port}/eureka/
     //todo http://localhost:3003/  showing disabled servers that is down as UP
+    
+**spring-data-rest**
+
+    //todo example of spring-data-rest
     

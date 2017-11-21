@@ -5,7 +5,7 @@ import com.kravchenko.beans.xml.MindService;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-public class App {
+public class Runner {
 
     public static void main(String[] args) {
         ApplicationContext context = new AnnotationConfigApplicationContext(MainConfiguration.class);
