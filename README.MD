@@ -7,6 +7,7 @@ Modules:
     Example of common module for a few applications
     Example of POJO with One-to-many JPA configuration
     Used by other modules for DB storage
+    Have DB data from import.sql. Other SpringBoot applications detect it automatically and execute on start
     
 **rest-template-example**    
     

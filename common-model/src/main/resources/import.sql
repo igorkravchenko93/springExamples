@@ -9,6 +9,7 @@ INSERT INTO blog(blog_id, blog_name) VALUES (6, 'My car')
 insert into category(id, category_name) VALUES (1, 'Car')
 insert into category(id, category_name) VALUES (2, 'Laptop')
 insert into category(id, category_name) VALUES (3, 'Cigarettes')
+insert into category(id, category_name) VALUES (4, 'Books')
 
 insert into manufacturer(id, manufacturer_name) VALUES (1, 'Apple')
 insert into manufacturer(id, manufacturer_name) VALUES (2, 'Dell')
