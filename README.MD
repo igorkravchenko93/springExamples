@@ -11,7 +11,7 @@ Modules:
     
 **rest-template-example**    
     
-    Example of spring RestTemplate that able to make REST calls
+    Example of spring RestTemplate that able to make REST calls to himself
     Example of spring-boot microservice
     
 **spring-boot-full-app**
@@ -47,4 +47,5 @@ Modules:
 **spring-data-rest**
 
     //todo example of spring-data-rest
+    //todo resolve n+1 probllem
     
