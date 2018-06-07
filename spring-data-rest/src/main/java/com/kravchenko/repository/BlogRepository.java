@@ -10,7 +10,7 @@ public interface BlogRepository extends CrudRepository<Blog, Long> {
 
     Collection<Blog> findByBlogName(@Param("blogName") String blogName);
 
-    Blog findById(@Param("id") Long id);
+    Blog findById(@Param("blogId") Long blogId);
 
 
 }

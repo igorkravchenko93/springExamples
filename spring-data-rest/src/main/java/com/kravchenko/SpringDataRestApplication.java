@@ -7,7 +7,7 @@ import org.springframework.context.annotation.PropertySource;
 
 @SpringBootApplication
 @ComponentScan("com.kravchenko.*")
-@PropertySource("classpath:db-config-postgresql.properties")
+@PropertySource("classpath:db-config-h2.properties")
 public class SpringDataRestApplication {
 
 	public static void main(String[] args) {
