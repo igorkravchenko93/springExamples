@@ -3,5 +3,5 @@ spring:
     name: ValidationService
 
 server:
-      port: 3005
+      port: 3006
 
