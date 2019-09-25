@@ -16,6 +16,7 @@
         <module>spring-cloud-example</module>
         <module>spring-data-rest</module>
         <module>paypal-sdk-example</module>
+        <module>base-controller-example</module>
     </modules>
     <properties>
         <maven.compiler.source>1.11</maven.compiler.source>
