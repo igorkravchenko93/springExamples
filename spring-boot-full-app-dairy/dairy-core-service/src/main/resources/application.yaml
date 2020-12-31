@@ -1,0 +1,15 @@
+eureka:
+  instance:
+    lease-renewal-interval-in-seconds: 1
+    lease-expiration-duration-in-seconds: 2
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    healthcheck:
+      enabled: true
+    service-url:
+      defaultZone: http://localhost:3010/eureka
+
+spring:
+  application:
+    name: dairy-service

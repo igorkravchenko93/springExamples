@@ -1,0 +1,18 @@
+server:
+  port: 3010
+
+eureka:
+  instance:
+    hostname: localhost
+  server:
+    eviction-interval-timer-in-ms: 10000
+    enable-self-preservation: false
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+#    serviceUrl:
+#      defaultZone: http://discovery:${server.port}/eureka/
+
+spring:
+  application:
+    name: DiscoveryServer

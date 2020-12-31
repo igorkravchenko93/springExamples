@@ -4,14 +4,16 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>spring-cloud-example</artifactId>
+    <artifactId>spring-boot-full-app-dairy</artifactId>
     <groupId>com.kravchenko</groupId>
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
     <modules>
-        <module>blog-service-example</module>
-        <module>discovery-server-example</module>
-        <module>validation-service-example</module>
+        <module>dairy-discovery-server</module>
+        <module>dairy-core-service</module>
+        <module>message-producer</module>
+        <module>message-consumer</module>
+        <module>common-service</module>
     </modules>
 
 
